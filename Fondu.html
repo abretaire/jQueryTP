@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Fondu</title>
+	<style>
+		body {
+			font-family: Verdana, Arial, sans-serif;
+			font-size: 100%;
+			color: #000;
+			background: #fff;
+		}
+		
+		#wrapper {
+			margin: 20px auto;
+			width: 80%;
+			background: #cfebca;
+			padding-bottom: 30px;
+		}	
+
+		.rond {
+			width: 200px;
+			height: 200px;
+			-webkit-border-radius: 100px;
+			-moz-border-radius: 100px;
+			border-radius: 100px;
+			background: #036;
+			padding: 10px;
+		}
+
+		.fonduitem {
+			margin: auto;
+			margin-bottom: 20px;
+			cursor: pointer;
+		}
+
+		.mots {
+			color: #fff;
+			text-align: center;
+			margin: 0;
+			margin-top: 80px;
+			padding: 0;
+		}
+	</style>
+</head>
+
+<body>
+<div id="wrapper">
+
+<h1>Fondu quand la souris entre puis sort du rond</h1>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas venenatis venenatis ornare. Fusce sit amet sapien sit amet orci lacinia ullamcorper. In hac habitasse platea dictumst. In non orci arcu. Nunc non felis a urna viverra ullamcorper eget sed lorem. Cras mauris diam, suscipit et malesuada in, adipiscing volutpat tortor.</p>
+
+<div class="rond fonduitem">
+	<p class="mots">Roll Over Me</p>
+</div>
+
+<p>Etiam et cursus quam. Phasellus ornare felis sed magna luctus nec pellentesque lacus tincidunt. Ut mauris eros, fringilla id placerat ac, pulvinar ut quam. Praesent eu diam nec magna volutpat semper vel nec neque. Aenean rhoncus commodo erat, a ultrices lorem pretium nec. Phasellus nunc tellus, suscipit sit amet dictum sed, sodales ut odio.</p>
+
+</div>
+
+<script src="jquery.js"></script>
+
+<script>
+$(function()
+  {
+	$("div.rond.fonduitem").click(function()
+	{
+	$(this).fadeTo(5000, 0.25);
+	})
+	$( "div.rond.fonduitem" ).mouseenter(function() {
+    $(this).fadeTo(2000, 0.25);
+    })
+	$( "div.rond.fonduitem" ).mouseleave(function() {
+    $(this).fadeTo(2000, 1);
+    })
+
+});
+
+
+  
+
+</script>
+</body>
+</html>

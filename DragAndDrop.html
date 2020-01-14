@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="UTF-8">
+	<title>Drag and Drop</title>
+  <style>
+    body {
+    	font-family: Verdana, Arial, sans-serif;
+    	font-size: 100%;
+    	color: #000;
+    	background: #fff;
+    }
+    
+    #wrapper {
+    	margin: 20px auto;
+    	width: 80%;
+    	background: #cfebca;
+    	padding-bottom: 30px;
+    }
+    
+    .rectangle {
+    	width: 200px;
+    	height: 200px;
+    	background: #036;
+    	margin: 0 0 20px 20px;
+    }
+    
+    .main {
+    	cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="wrapper">
+
+  <h1>Déplacer une DIV</h1>
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas venenatis venenatis ornare. Fusce sit amet sapien sit amet orci lacinia ullamcorper. In hac habitasse platea dictumst. In non orci arcu. Nunc non felis a urna viverra ullamcorper eget sed lorem. Cras mauris diam, suscipit et malesuada in, adipiscing volutpat tortor.</p>
+
+  <div class="rectangle main"></div>
+
+  <p>Etiam et cursus quam. Phasellus ornare felis sed magna luctus nec pellentesque lacus tincidunt. Ut mauris eros, fringilla id placerat ac, pulvinar ut quam. Praesent eu diam nec magna volutpat semper vel nec neque. Aenean rhoncus commodo erat, a ultrices lorem pretium nec. Phasellus nunc tellus, suscipit sit amet dictum sed, sodales ut odio.</p>
+
+</div>
+
+<script src="jquery.js"></script>
+
+<script>
+
+$(function()
+{
+var bool = new Boolean();
+$(".rectangle").mousemove(function()
+{
+if(bool == true){
+  var p = $(".rectangle").offset();
+    p.top = event.pageY - 100;
+    p.left = event.pageX - 100;
+    $(".rectangle").offset(p);
+  }
+  
+})
+$(".rectangle").mousedown(function()
+	{
+    bool = true;
+	
+  })
+$(".rectangle").mouseup(function(event)
+	{
+    bool = false;
+})
+  
+});
+
+</script>
+</body>
+</html>

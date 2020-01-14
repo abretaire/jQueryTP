@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Menus Accordéon</title>
+  <style>
+    #menu
+    {
+      margin: 0;
+      padding: 0;
+    }
+    #menu li
+    {
+      list-style: none;
+      font-size: 12px;
+      font-family: Arial,Helvetica,sans-serif;
+    }
+    #menu li a
+    {
+      display: block;
+      text-decoration: none;
+      border-bottom: 1px solid white;
+      background: darkcyan;
+      padding: 5px 12px;
+      width: 100px;
+      color: aliceblue;
+      white-space: nowrap;
+    }
+
+    .hide{
+      display: none;
+    }
+    #menu li ul
+    {
+      margin: 0;
+      padding: 0;
+    }
+    #menu li ul li a
+    {
+      width: 100px;
+      background: coral;
+      
+    }
+  </style>
+  </head>
+  <body>
+    <ul id='menu'>
+      <li>
+        <a href='#' class="Menu1">Menu1</a>
+        <ul>
+          <li><a  href='url/Sous-Menu1'>Sous-Menu1</a></li>
+          <li><a href='url/Sous-Menu2'>Sous-Menu2</a></li>
+          <li><a href='url/Sous-Menu3'>Sous-Menu3</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href='#' style="background: darkcyan;" >Menu2</a>
+        <ul>
+          <li><a href='url/Sous-Menu4'>Sous-Menu4</a></li>
+          <li><a href='url/Sous-Menu4'>Sous-Menu5</a></li>
+        </ul>
+      </li>
+      <li><a href='url/Menu3' style="background: darkcyan;" >Menu3</a></li>
+      <li><a href='url/Menu4' style="background: darkcyan;" >Menu4</a></li>
+    </ul>
+
+
+    <script src="jquery.js"></script>
+
+    <script>   
+
+    
+    $(function()
+    {      
+      $("#menu li ul li a").hide();
+
+      $("a[href = '#']:first").hover(function()
+      {
+        $(this).css("background" , "darkgreen");
+        $("a[href = 'url/Sous-Menu1']").slideDown();
+        $("a[href = 'url/Sous-Menu2']").slideDown();
+        $("a[href = 'url/Sous-Menu3']").slideDown();
+        
+      })
+      $("a[href = '#']:last").hover(function()
+      {
+        $(this).css("background" , "darkgreen");
+        $("a[href = 'url/Sous-Menu4']").slideDown();
+        $("a[href = 'url/Sous-Menu5']").slideDown();
+      })
+      $("a[href = '#']:first").mouseleave(function()
+      {
+        $(this).css("background" , "darkcyan");
+        $("a[href = 'url/Sous-Menu1']").slideUp();
+        $("a[href = 'url/Sous-Menu2']").slideUp();
+        $("a[href = 'url/Sous-Menu3']").slideUp();
+        
+      })
+      $("a[href = '#']:last").mouseleave(function()
+      {
+        $(this).css("background" , "darkcyan");
+      $("a[href = 'url/Sous-Menu4']").slideUp();
+        $("a[href = 'url/Sous-Menu5']").slideUp();
+      })
+
+
+      $("a[href = 'url/Sous-Menu1'] , a[href = 'url/Sous-Menu2'] , a[href = 'url/Sous-Menu3'] ").hover(function()
+      {
+        $(this).css("background" , "darkred");
+        $("a[href = 'url/Sous-Menu1']").show();
+        $("a[href = 'url/Sous-Menu2']").show();
+        $("a[href = 'url/Sous-Menu3']").show();
+      })
+      $("a[href = 'url/Sous-Menu1'] , a[href = 'url/Sous-Menu2'] , a[href = 'url/Sous-Menu3']").mouseleave(function()
+      {
+        $(this).css("background" , "coral");
+        $("a[href = 'url/Sous-Menu1']").show();
+        $("a[href = 'url/Sous-Menu2']").show();
+        $("a[href = 'url/Sous-Menu3']").show();
+        
+      })
+      
+      $("a[href = 'url/Sous-Menu4'] , a[href = 'url/Sous-Menu5']").hover(function()
+      {
+        $(this).css("background" , "darkred");
+        $("a[href = 'url/Sous-Menu4']").show();
+        $("a[href = 'url/Sous-Menu5']").show();
+        
+      })
+      $("a[href = 'url/Sous-Menu4'] , a[href = 'url/Sous-Menu5']").mouseleave(function()
+      {
+        $(this).css("background" , "coral");
+        $("a[href = 'url/Sous-Menu4']").show();
+        $("a[href = 'url/Sous-Menu5']").show();
+        
+        
+      })
+
+
+      $("a[href = 'url/Menu3']").hover(function()
+      {
+        $(this).css("background" , "darkgreen");
+      })
+      $("a[href = 'url/Menu3'] ").mouseout(function()
+      {
+        $(this).css("background" , "darkcyan");
+      })
+
+      $("a[href = 'url/Menu4']").hover(function()
+      {
+        $(this).css("background" , "darkgreen");
+      })
+      $("a[href = 'url/Menu4']").mouseout(function()
+      {
+        $(this).css("background" , "darkcyan");
+      })
+      
+    
+
+
+    });
+
+
+
+    
+  
+    </script>
+  </body>
+</html>

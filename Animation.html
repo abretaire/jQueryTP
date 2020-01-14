@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Animation</title>
+	<style>
+    body {
+    	font-family: Verdana, Arial, sans-serif;
+    	font-size: 100%;
+    	color: #000;
+    	background: #000 url(images/etoiles.jpg) repeat;
+    }
+    
+    #wrapper {
+    	margin: 20px auto;
+    	width: 80%;
+    	background: #cfebca;
+    	padding-bottom: 30px;
+    }
+
+    #fusee {
+        position: relative;
+        left: 50%;
+        width: 60px;
+        top: 0;
+    }
+
+
+	</style>
+</head>
+
+<body>
+  <div id="wrapper">
+
+    <h1>Animation : Utiliser les touche haut, bas, droite et gauche pour déplace la fusée !</h1>
+    
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas venenatis venenatis ornare. Fusce sit amet sapien sit amet orci lacinia ullamcorper. In hac habitasse platea dictumst. In non orci arcu. Nunc non felis a urna viverra ullamcorper eget sed lorem. Cras mauris diam, suscipit et malesuada in, adipiscing volutpat tortor.</p>
+      
+    <img id="fusee" src="fuseau.jpg">
+    
+    <p>Etiam et cursus quam. Phasellus ornare felis sed magna luctus nec pellentesque lacus tincidunt. Ut mauris eros, fringilla id placerat ac, pulvinar ut quam. Praesent eu diam nec magna volutpat semper vel nec neque. Aenean rhoncus commodo erat, a ultrices lorem pretium nec. Phasellus nunc tellus, suscipit sit amet dictum sed, sodales ut odio.</p>
+  
+  </div>
+
+  <script src="jquery.js"></script>
+
+
+  <script>
+  $("body").keydown(function(e){
+    switch (e.which){
+    case 37:    
+        $("#fusee").finish().animate({
+            left: "-=15"
+        });
+        break;
+    case 38:    
+        $("#fusee").finish().animate({
+            top: "-=15"
+        });
+        break;
+    case 39:    
+        $("#fusee").finish().animate({
+            left: "+=15"
+        });
+        break;
+    case 40:    
+        $("#fusee").finish().animate({
+            top: "+=15"
+        });
+        break;
+    }
+});
+  </script>
+</body>
+</html>
